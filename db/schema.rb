@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170819005825) do
+ActiveRecord::Schema.define(version: 20190828230347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 20170819005825) do
     t.string   "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "food_journals", force: :cascade do |t|
+    t.text     "title"
+    t.text     "description"
+    t.integer  "before_sugar_lvl"
+    t.integer  "after_sugar_lvl"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "recurring_events", force: :cascade do |t|

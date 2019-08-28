@@ -1,0 +1,14 @@
+<h1><%= @foodJournal.title %></h1>
+
+<%= image_tag @foodJournal.image.variant(resize: '500X500') if @foodJournal.image.attached? %>
+
+<p>Description: <%= @foodJournal.description %></p>
+
+<p>Before sugar level: <%= @foodJournal.before_sugar_lvl %></p>
+
+<p>After sugar level:<%= @foodJournal.after_sugar_lvl %></p>
+
+<p>Created at: <%= @foodJournal.created_at %></p>
+
+<%= link_to "Edit", edit_food_journal_path(@foodJournal) %>
+<%= link_to "Delete", food_journal_path(@foodJournal), method: :delete, data: {confirm: "Are you sure"} %>

@@ -1,0 +1,33 @@
+<h1>New Food Journal Entry</h1>
+<% if @foodJournal.errors.any? %>
+  <ul>
+    <% @foodJournal.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+
+
+<%= form_for @foodJournal do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+    <div>
+    <%= f.file_field :image %>
+  </div>
+   <div>
+    <%= f.label :before_sugar_lvl %>
+    <%= f.text_field :before_sugar_lvl %>
+  </div> <div>
+    <%= f.label :after_sugar_lvl %>
+    <%= f.text_field :after_sugar_lvl %>
+  </div>
+  <%= f.submit %>
+<% end %>

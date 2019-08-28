@@ -1,0 +1,11 @@
+<h1>All Food Journals</h1>
+<h2><%= link_to "New Entry", new_food_journal_path %></h2>
+<% @foodJournal.each do |fj|  %>
+  <div>
+    <h3><%= link_to fj.title, food_journal_path(fj) %></h3>
+    <p>Description: <%= fj.description %></p>
+    <p>Before sugar level: <%= fj.before_sugar_lvl %></p>
+    <p>After sugar level: <%= fj.after_sugar_lvl %></p>
+    <hr>
+  </div>
+<% end %>

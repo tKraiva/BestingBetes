@@ -1,0 +1,2 @@
+class FoodJournal < ApplicationRecord
+end
