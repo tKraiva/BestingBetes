@@ -62,10 +62,12 @@ class FoodJournalsController < ApplicationController
 
     private
 
+    
+
 
     def foodJournal_params
 
-        params.require(:food_journal).permit(:title, :description, :before_sugar_lvl, :after_sugar_lvl, :tag_names)
+        params.require(:food_journal).permit(:title, :description, :before_sugar_lvl, :after_sugar_lvl, :tag_names, :image)
 
 
     end

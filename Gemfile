@@ -11,7 +11,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5.x'
 gem 'jbuilder', '~> 2.0'
 gem 'selectize-rails'
-
+gem 'carrierwave'
 group :development, :test do
   gem 'byebug', platform: :mri
 end
