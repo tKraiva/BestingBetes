@@ -1,6 +1,6 @@
 <h1><%= @foodJournal.title %></h1>
 
-<%= image_tag @foodJournal.image.variant(resize: '500X500') if @foodJournal.image.attached? %>
+
 
 <p>Description: <%= @foodJournal.description %></p>
 
@@ -12,3 +12,14 @@
 
 <%= link_to "Edit", edit_food_journal_path(@foodJournal) %>
 <%= link_to "Delete", food_journal_path(@foodJournal), method: :delete, data: {confirm: "Are you sure"} %>
+
+<hr />
+
+
+<% unless @foodJournal.tags.empty? %>
+  <div>
+    <% @foodJournal.tags.each do |tag| %>
+      <%= tag.name %>
+    <% end %>
+  </div>
+<% end %>

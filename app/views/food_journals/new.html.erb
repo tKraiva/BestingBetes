@@ -11,23 +11,46 @@
 
 
 <%= form_for @foodJournal do |f| %>
-  <div>
+  <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
-  <div>
-    <%= f.label :description %>
+   <div class="form-group">
+    <%= f.label :Ingredients %>
+    <%= f.text_field :tag_names %>
+  </div>
+  <div class="form-group">
+    <%= f.label :meal_description %>
     <%= f.text_area :description %>
   </div>
-    <div>
-    <%= f.file_field :image %>
-  </div>
-   <div>
+   <div class="form-group">
     <%= f.label :before_sugar_lvl %>
     <%= f.text_field :before_sugar_lvl %>
-  </div> <div>
+  </div> 
+  <div class="form-group">
     <%= f.label :after_sugar_lvl %>
     <%= f.text_field :after_sugar_lvl %>
   </div>
-  <%= f.submit %>
+ 
+  <%= f.submit class: 'btn btn-primary' %>
 <% end %>
+
+
+
+<script>
+  // Documentation for selectize.js:
+  // https://selectize.github.io/selectize.js/
+  // For description of options that are usable go to:
+  // https://github.com/selectize/selectize.js/blob/master/docs/usage.md
+  $("#food_journal_tag_names").selectize({
+    delimiter: ',',
+    persist: false,
+    labelField: "name",
+    valueField: "name",
+    searchField: "name",
+    options: <%= Tag.select(:name).to_json(except: [:id]).html_safe %>,
+    create (input) {
+      return { name: input }
+    }
+  })
+</script>

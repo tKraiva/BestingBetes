@@ -1,6 +1,7 @@
 // import the CSS framework
 @import "bootstrap-sprockets";
-
+@import "selectize";
+@import "selectize.bootstrap3";
 $bootstrap-sass-asset-helper: false !default;
 //
 // Variables
