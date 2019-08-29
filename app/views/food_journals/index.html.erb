@@ -3,9 +3,16 @@
 <% @foodJournal.each do |fj|  %>
   <div>
     <h3><%= link_to fj.title, food_journal_path(fj) %></h3>
+    <%= image_tag(fj.image_url.to_s) %>
     <p>Description: <%= fj.description %></p>
     <p>Before sugar level: <%= fj.before_sugar_lvl %></p>
     <p>After sugar level: <%= fj.after_sugar_lvl %></p>
+    <div>
+      <% fj.tags.each do |tag| %>
+        <%= tag.name %>
+      <% end %>
+    </div>
+    
     <hr>
   </div>
 <% end %>
